@@ -4,9 +4,24 @@ import matplotlib.pyplot as plt
 import nltk
 import re
 import bs4 as bs
+import urllib.request
 import os
 import heapq
+
 nltk.download('stopwords')
+
+# Code for scraping an article from a webpage
+"""
+
+source = urllib.request.urlopen('https://www.bbc.com/news/world-asia-india-48705022').read()
+soup = bs.BeautifulSoup(source)
+text = ""
+for paragraph in soup.find_all('p'):
+	text += paragraph.text
+	
+"""
+
+
 
 article = ""
 with open(os.path.join("entertainment/001.txt"),encoding="utf-8") as f:
