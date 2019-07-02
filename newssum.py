@@ -24,7 +24,7 @@ for paragraph in soup.find_all('p'):
 
 
 article = ""
-with open(os.path.join("entertainment/001.txt"),encoding="utf-8") as f:
+with open(os.path.join("articles/entertainment_a/001.txt"),encoding="utf-8") as f:
 	for line in f:
 		article += str(line)
 		
@@ -56,21 +56,37 @@ sent2score  = {}
 for sentence in sentences:
 	for word in nltk.word_tokenize(sentence.lower()):
 		if word in word2count.keys():
-			if len(sentence.split(' ')) < 25:
-				if sentence not in sent2score.keys():
-					sent2score[sentence] = word2count[word]
-				else:
-					sent2score[sentence] += word2count[word]
+			if sentence not in sent2score.keys():
+				sent2score[sentence] = word2count[word]
+			else:
+				sent2score[sentence] += word2count[word]
+
+
+for sentence,score in sent2score.items():
+	sent2score[sentence] = score/len(sentence)
 					
-best_sentences = heapq.nlargest(3,sent2score,key = sent2score.get)
+
+sent2idx = {}
+i=0
+for sentence in sentences:
+	sent2idx[sentence] = i
+	i += 1
+					
+best_sentences = heapq.nlargest(5,sent2score,key = sent2score.get)
+
+bestsent2idx = {}
+for sentence in best_sentences:
+	bestsent2idx[sentence] = sent2idx[sentence]
+
+best_sentences = heapq.nsmallest(5,bestsent2idx,key = bestsent2idx.get)
 
 summary = ""
 
 for sentence in best_sentences:
 	summary += str(sentence)
 
-
-				
+print('Article: ',article)
+print('Summary: ',summary)			
 
 			
 
