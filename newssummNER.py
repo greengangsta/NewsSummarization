@@ -1,11 +1,3 @@
-"""
-Members
-1.acc.surajtripathi@gmail.com(Representative)
-2.sonivaibhav939@gmail.com
-3.vidyanamde1995@gmail.com
-
-"""
-
 # Importing the libraries
 import numpy as np
 import pandas as pd
@@ -74,7 +66,7 @@ sentences = nltk.sent_tokenize(article)
 
 # This method completely ignores the sentences with length above 25 words.
 # Since someties those sentecnes could be useful I have also included this 
-# approacch to penalize the sentences. 
+# approach to penalize the sentences. 
 """
 sent2score  = {}
 for sentence in sentences:
@@ -112,7 +104,7 @@ for sentence in sentences:
 	i += 1
 	 
 # Picking 'n' sentences with highest scores usign heapq
-best_sentences = heapq.nlargest(5,sent2score2,key = sent2score.get)
+best_sentences = heapq.nlargest(5,sent2score2,key = sent2score2.get)
 
 # Creating a dictionary to get the index of the best sentences from set2idx dictionary.
 bestsent2idx = {}

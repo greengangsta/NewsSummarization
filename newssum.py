@@ -1,11 +1,3 @@
-"""
-Members
-1.acc.surajtripathi@gmail.com(Representative)
-2.sonivaibhav939@gmail.com
-3.vidyanamde1995@gmail.com
-
-"""
-
 # Importing the libraries
 import numpy as np
 import pandas as pd
@@ -107,7 +99,7 @@ for sentence in best_sentences:
 best_sentences = heapq.nsmallest(5,bestsent2idx,key = bestsent2idx.get)
 
 # Adding the best sentences to the summary
-summary = "".
+summary = ""
 for sentence in best_sentences:
 	summary += str(sentence)
 
