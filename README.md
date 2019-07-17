@@ -19,4 +19,9 @@ Approach 2 : Using ner words to score the sentences.(newssumNER.py)
 <li>urllib.request</li>
 </ul>
 Note : Some of the dependencies might already be fulfilled if you are using anaconda environment.
+<br>
+Members Group 1939 <br>
+1.acc.surajtripathi@gmail.com(Representative)<br>
+2.sonivaibhav939@gmail.com<br>
+3.vidyanamde1995@gmail.com<br>
 
